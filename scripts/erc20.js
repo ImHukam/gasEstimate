@@ -6,6 +6,8 @@ require("dotenv").config();
 async function sampleTokenTransfer() {
   // get private key from env
   const privateKey = process.env.PRIVATE_KEY;
+   // get contract address
+  const contractAddress = process.env.CONTRACT_ADDRESS;
 
   // initialize provider
 //   const provider = new providers.InfuraProvider(
@@ -18,9 +20,6 @@ const provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticv
 
   // initialize signer
   const signer = new Wallet(privateKey, provider);
-
-  // get contract address
-  const contractAddress = process.env.address;
 
   // fetch signer nonce
   const nonce = await provider.getTransactionCount(signer.address);
