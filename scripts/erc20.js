@@ -20,6 +20,7 @@ const provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticv
 
   // initialize signer
   const signer = new Wallet(privateKey, provider);
+  // const signer = new ethers.Wallet(privateKey, provider)
 
   // fetch signer nonce
   const nonce = await provider.getTransactionCount(signer.address);
